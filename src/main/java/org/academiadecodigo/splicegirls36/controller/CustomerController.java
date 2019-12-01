@@ -14,7 +14,9 @@ public class CustomerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Customer customer = new Customer("bsCustomer", "bla@bs.xyz");
+        Customer customer = new Customer();
+        customer.setName("bsCustomer");
+        customer.setEmail("bla@bs.xyz");
         RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         req.setAttribute("customer", customer);
         dispatcher.forward(req, resp);
