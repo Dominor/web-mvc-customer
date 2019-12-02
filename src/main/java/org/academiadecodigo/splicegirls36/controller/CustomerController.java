@@ -17,8 +17,8 @@ public class CustomerController extends HttpServlet {
         Customer customer = new Customer();
         customer.setName("bsCustomer");
         customer.setEmail("bla@bs.xyz");
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         req.setAttribute("customer", customer);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/templates/index.jsp");
         dispatcher.forward(req, resp);
     }
 }
